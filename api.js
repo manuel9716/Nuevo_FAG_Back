@@ -6,6 +6,7 @@ var cors = require('cors');
 const request = require("superagent");
 const dbactividadeconomica = require("./dbactividadeconomica");
 const dbparametrocomision = require("./dbparametrocomision");
+const dbdestino = require("./dbdestino");
 
 var app = express();
 var router = express.Router();
@@ -33,6 +34,13 @@ router.route("/actividadeconomica").get((request, response)=>{
 //Parametro comision
 router.route("/parametrocomision").get((request, response)=>{
     dbparametrocomision.getParametroComision().then(result =>{
+        response.json(result[0]);
+    })
+})
+
+//Parametro destino credito
+router.route("/destinocredito").get((request, response)=>{
+    dbdestino.getDestinoCredito().then(result =>{
         response.json(result[0]);
     })
 })
