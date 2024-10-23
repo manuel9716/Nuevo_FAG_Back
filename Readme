@@ -1,0 +1,11 @@
+CREATE TABLE lista_referencia (
+    Id_lista INT IDENTITY(1,1) PRIMARY KEY,
+    nombre_lista VARCHAR(128) NOT NULL,
+    descripcion VARCHAR(1028) NULL,
+	abreviatura VARCHAR(128) NOT NULL,
+	codigo_referencia VARCHAR(128) NOT NULL,
+	codigo_negocio VARCHAR(128) NOT NULL,
+	opcional_1 VARCHAR(128) NULL,
+	opcional_2 VARCHAR(128) NULL,
+    
+);

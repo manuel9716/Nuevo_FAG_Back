@@ -6,8 +6,8 @@ const sql = require('mssql');
 const dbConfig = {
     user: 'sa',
     password: '12345678',
-    server: 'localhost\\MSSQLSERVER01',
-    database: 'usuarios_bitwan',
+    server: 'MANUELRV\\SQLEXPRESS',
+    database: 'DBTEST2',
     options:{
         trustedconnection: false,
         enableArithAbort: true,
