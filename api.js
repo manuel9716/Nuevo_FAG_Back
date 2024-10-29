@@ -7,6 +7,9 @@ const request = require("superagent");
 const dbactividadeconomica = require("./dbactividadeconomica");
 const dbparametrocomision = require("./dbparametrocomision");
 const dbdestino = require("./dbdestino");
+const dbintermediario = require("./dbintermediariofinanciero");
+const dbparametrogeneral = require("./dbparametrogeneral");
+
 
 var app = express();
 var router = express.Router();
@@ -44,6 +47,22 @@ router.route("/destinocredito").get((request, response)=>{
         response.json(result[0]);
     })
 })
+
+//Parametro intermediario financiero
+router.route("/intermediario").get((request, response)=>{
+    dbintermediario.getIntermediarioFinanciero().then(result =>{
+        response.json(result[0]);
+    })
+})
+
+//Parametro parametro general
+router.route("/paramgeneral").get((request, response)=>{
+    dbparametrogeneral.getParametroGeneral().then(result =>{
+        response.json(result[0]);
+    })
+})
+
+
 //Presupuesto SQLSERVER
 // app.use( require('./controllers/presupuesto.controller') );
 
